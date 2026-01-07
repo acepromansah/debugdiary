@@ -1,0 +1,757 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #faf8f5;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #000000;
+  --border: #e8e6e3;
+  --accent: #000000;
+  --shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  --hover-bg: #f9f8f6;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* LOGIN & REGISTER */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--bg);
+}
+
+.login-container,
+.register-container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: var(--card);
+  color: var(--text);
+  transition: border 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.08);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1a1a1a;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Register-specific */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* DASHBOARD */
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: var(--text);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo-app {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--bg);
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.sidebar nav li {
+  margin: 8px 0;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: var(--hover-bg);
+  color: var(--accent);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* STAT CARDS */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card-total-revenue {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.stat-card-active-users {
+  background: var(--text-secondary);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+  color: var(--bg);
+  margin-bottom: 8px;
+}
+
+.stat-card-new-users {
+  background: var(--accent);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+  color: var(--bg);
+  margin-bottom: 8px;
+}
+
+.stat-card-total-mentors {
+  background: var(--accent);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+  font-size: 0.9rem;
+  color: var(--bg);
+  margin-bottom: 8px;
+}
+
+.stat-card-total-revenue:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card-active-users:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card-new-users:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card-total-mentors:hover {
+  transform: translateY(-2px);
+}
+
+/* CHART */
+.chart-and-calendar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h3 {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.section-header button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.chart-section {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.chart-container {
+  height: 200px;
+  margin-top: 10px;
+}
+
+/* RECENT ENTRIES */
+.recent-entries {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.recent-entries table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.recent-entries th,
+.recent-entries td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.recent-entries th {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.recent-entries td {
+  color: var(--text);
+}
+
+.recent-entries .status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .chart-and-calendar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .search-bar {
+    width: 100%;
+  }
+  .stat-cards {
+    grid-template-columns: 1fr;
+  }
+  .section-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* FORM CATATAN DEBUG */
+
+.form-section {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    color: var(--text);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* GRID UNTUK FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Judul 1 kolom, Deskripsi 2 kolom */
+    gap: 20px;
+    align-items: start;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--card);
+    color: var(--text);
+    transition: border-color 0.2s;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.08);
+}
+
+/* INPUT TEXT & SELECT */
+.form-field input,
+.form-field select {
+    height: 48px;
+}
+
+/* TEXTAREA - FULL HEIGHT */
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* BUTTON SIMPAN - LEBAR PENUH */
+.btn-save {
+    width: 100%;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 1rem;
+}
+
+.btn-save:hover {
+    background: #2d2d2d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Entries */
+.entries-list {
+  margin-top: 20px;
+}
+
+.entries-list h3 {
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.entry {
+  background: var(--card);
+  padding: 18px;
+  margin: 16px 0;
+  border-radius: 12px;
+  border-left: 4px solid #d0d0d0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.entry-low {
+  border-left-color: #a0a0a0;
+}
+
+.entry-medium {
+  border-left-color: #6e6e6e;
+}
+
+.entry-high {
+  border-left-color: var(--accent);
+}
+
+.entry h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.entry p {
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+.entry small {
+  color: #8a8a8a;
+  font-size: 0.85rem;
+}
+
+.entry-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.entry-action button:hover {
+  background: #f0efed;
+}
+
+@media (max-width: 600px) {
+  .form-action {
+    flex-direction: column;
+  }
+  .form-action button {
+    width: 100%;
+  }
+}
+
+/* Analytics */
+.charts-side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.chart-wrapper {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  height: 350px; /* Tinggi tetap */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.chart-canvas {
+  flex: 1;
+  position: relative;
+  min-height: 280px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .charts-side-by-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Forum */
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card form input,
+.card form textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  color: #d00;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.btn-delete:hover {
+  text-decoration: underline;
+}
+
+/* DASHBOARD CARDS */
+
+/*Grid System ato Membagi layar jadi 4 kolom */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Desain Kotak Kartu */
+.card-box {
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Efek saat mouse lewat */
+.card-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Tulisan Judul Kecil */
+.card-box h3 {
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+/* Angka Besar */
+.card-box .value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Warna-warni Gradient */
+.bg-blue { background: linear-gradient(45deg, #4e73df, #224abe); }
+.bg-green { background: linear-gradient(45deg, #1cc88a, #13855c); }
+.bg-yellow { background: linear-gradient(45deg, #f6c23e, #dda20a); }
+.bg-red { background: linear-gradient(45deg, #e74a3b, #be2617); }
+
+/* LAYOUT UTAMA (GRID) */
+.chart-and-calendar {
+    display: grid;
+    grid-template-columns: 70% 28%; 
+    gap: 2%;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+/* Responsif untuk HP (biar ga gepeng) */
+@media (max-width: 768px) {
+    .chart-and-calendar {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* KOTAK PUTIH (Container) */
+/* Class ini dipakai untuk Chart DAN Profile sekaligus */
+.chart-section, .profile-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* BAGIAN CHART (KIRI) */
+.section-header h3 {
+    margin: 0;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* BAGIAN PROFIL (KANAN) */
+.profile-section {
+    text-align: center; 
+}
+
+.profile-section h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #4e73df;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #eaecf4;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.profile-role {
+    color: #858796;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* Tombol Profil */
+.btn-profil {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-profil:hover { opacity: 0.9; text-decoration: none; color: white; }
+.bg-blue { background: #4e73df; }
+.bg-red { background: #e74a3b; }
